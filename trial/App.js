@@ -9,6 +9,7 @@ import {
   Button,
   TouchableOpacity,
 } from "react-native";
+import { SolidIcons } from "react-native-fontawesome";
 import FontAwesome5Icon from "react-native-vector-icons/FontAwesome5";
 
 
@@ -19,6 +20,9 @@ const onPressLogin = () => {
     
   <View style={styles.container}>
   <text>You are logged in</text>
+   <View style={styles.fontawesome}>
+      {/* <FontAwesome5Icon icon={SolidIcons.smile}></FontAwesome5Icon> */}
+      </View>
 </View>
    
   );
@@ -50,14 +54,16 @@ export default function App() {
           onChangeText={(password) => setPassword(password)}
         /> 
       </View> 
-      <View style={styles.fontawesome}>
-      <FontAwesome5Icon></FontAwesome5Icon>
-      </View>
+     
       <TouchableOpacity>
         <Text style={styles.forgot_button}>Forgot Password?</Text> 
       </TouchableOpacity> 
       <TouchableOpacity style={styles.loginBtn} onPress = {onPressLogin}>
-        <Text style={styles.loginText}>LOGIN</Text> 
+        <Text style={styles.loginText}>LOGIN</Text>  <View style={styles.fontawesome}>
+        <View>
+        <FontAwesome icon={SolidIcons.smile}></FontAwesome>
+        </View> 
+      </View>
       </TouchableOpacity> 
     </View> 
   );
@@ -102,5 +108,8 @@ const styles = StyleSheet.create({
   },
   loginText:{
     color:"white",
+  },
+  fontawesome:{
+    color:"black"
   }
 });
